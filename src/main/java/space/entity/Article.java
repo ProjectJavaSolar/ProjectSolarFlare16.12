@@ -8,23 +8,26 @@ import java.util.Set;
 @Table(name = "articles")
 public class Article {
     private Integer id;
-    private String title;
-    private String content;
-    private User author;
-    private Category category;
-    private Set<Tag> tags;
 
+    private String title;
+
+    private String content;
+
+    private User author;
+
+    private Category category;
+
+    private Set<Tag> tags;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer getId() { return id;}
-
-
+    public Integer getId() {
+        return id;
+    }
 
     public void setId(Integer id) {
         this.id = id;
     }
-
     @Column(nullable = false)
     public String getTitle() {
         return title;
@@ -33,7 +36,6 @@ public class Article {
     public void setTitle(String title) {
         this.title = title;
     }
-
     @Column(columnDefinition = "text", nullable = false)
     public String getContent() {
         return content;
@@ -42,23 +44,17 @@ public class Article {
     public void setContent(String content) {
         this.content = content;
     }
-
-    @ManyToOne()
-    @JoinColumn(nullable = false, name = "categoryId")
-    public Category getCategory() { return category; }
-
-    public void setCategory(Category category) { this.category = category;}
-
-
     @ManyToOne()
     @JoinColumn(nullable = false, name = "authorId")
-    public User getAuthor() { return author;}
+    public User getAuthor() {
+        return author;
+    }
 
     public void setAuthor(User author) {
         this.author = author;
     }
-
-    public Article(String title, String content, User author, Category category, HashSet<Tag> tags) {
+    public Article (String title, String content, User author, Category category, HashSet<Tag> tags){
+        this();
         this.title = title;
         this.content = content;
         this.author = author;
@@ -66,22 +62,26 @@ public class Article {
 
         this.tags = tags;
     }
+    public Article(){
+        this.tags = new HashSet<>();
+    }
 
     @Transient
     public String getSummary(){
         return this.getContent().substring(0, this.getContent().length() / 2) + "...";
 
     }
+
+    @ManyToOne()
+    @JoinColumn(nullable = false, name = "categoryId")
+    public Category getCategory() { return category; }
+
+    public void setCategory(Category category) { this.category = category; }
+
     @ManyToMany()
     @JoinColumn(table = "articles_tags")
-    public Set<Tag> getTags() { return  tags; }
+    public Set<Tag> getTags() { return tags; }
+
 
     public void setTags(Set<Tag> tags) { this.tags = tags; }
-
-    public Article() {
-        this.tags = new HashSet<>();
-    }
-
-
-
 }

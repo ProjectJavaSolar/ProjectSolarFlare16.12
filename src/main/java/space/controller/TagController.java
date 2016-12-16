@@ -10,12 +10,11 @@ import space.repository.TagRepository;
 
 @Controller
 public class TagController {
-
     @Autowired
     private TagRepository tagRepository;
 
     @GetMapping("/tag/{name}")
-    public String articleWithTags(Model model, @PathVariable String name){
+    public String articlesWithTag(Model model, @PathVariable String name){
         Tag tag = this.tagRepository.findByName(name);
 
         if(tag == null){
@@ -25,6 +24,6 @@ public class TagController {
         model.addAttribute("view", "tag/articles");
         model.addAttribute("tag", tag);
 
-        return  "base-layout";
+        return "base-layout";
     }
 }

@@ -52,6 +52,6 @@ public class Role {
 
     @Transient
     public String getSimpleName(){
-        return StringUtils.capitalize(this.getName().substring(5).toLowerCase());
+        return org.thymeleaf.util.StringUtils.capitalize(this.getName().substring(5).toLowerCase());
     }
 }

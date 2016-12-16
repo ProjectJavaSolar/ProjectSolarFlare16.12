@@ -19,6 +19,8 @@ public class User {
 
     private Set<Role> roles;
 
+    private Set<Article> articles;
+
     public User(String email, String fullName, String password) {
         this.email = email;
         this.password = password;
@@ -26,9 +28,11 @@ public class User {
 
         this.roles = new HashSet<>();
         this.articles = new HashSet<>();
+
     }
 
-    public User() {    }
+    public User() {
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -81,12 +85,14 @@ public class User {
         this.roles.add(role);
     }
 
-    private Set<Article> articles;
-
     @OneToMany(mappedBy = "author")
-    public Set<Article> getArticles() { return articles;}
+    public Set<Article> getArticles() {
+        return articles;
+    }
 
-    public void setArticles(Set<Article> articles) { this.articles = articles; }
+    public void setArticles(Set<Article> articles) {
+        this.articles = articles;
+    }
 
     @Transient
     public boolean isAdmin() {
@@ -100,6 +106,4 @@ public class User {
         return Objects.equals(this.getId(),
                 article.getAuthor().getId());
     }
-
-
 }

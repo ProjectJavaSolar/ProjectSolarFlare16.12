@@ -31,6 +31,8 @@ public class CategoryController {
 
     @GetMapping("/")
     public String list(Model model){
+        model.addAttribute("view", "admin/category/list");
+
         List<Category> categories = this.categoryRepository.findAll();
 
         categories = categories.stream()
@@ -39,9 +41,8 @@ public class CategoryController {
 
         model.addAttribute("categories", categories);
 
-        model.addAttribute("view", "admin/category/list");
+        return "base-layout";
 
-            return "base-layout";
     }
 
     @GetMapping("/create")
@@ -53,10 +54,10 @@ public class CategoryController {
 
     @PostMapping("/create")
     public String createProcess(CategoryBindingModel categoryBindingModel){
+
         if(StringUtils.isEmpty(categoryBindingModel.getName())){
             return "redirect:/admin/categories/create";
         }
-
         Category category = new Category(categoryBindingModel.getName());
 
         this.categoryRepository.saveAndFlush(category);
@@ -72,7 +73,6 @@ public class CategoryController {
         Category category = this.categoryRepository.findOne(id);
 
         model.addAttribute("category", category);
-
         model.addAttribute("view", "admin/category/edit");
 
         return "base-layout";
@@ -82,9 +82,8 @@ public class CategoryController {
     public String editProcess(@PathVariable Integer id,
                               CategoryBindingModel categoryBindingModel){
         if(!this.categoryRepository.exists(id)){
-            return "redirect:/admin/categories/";
+            return  "redirect:/admin/categories/";
         }
-
         Category category = this.categoryRepository.findOne(id);
 
         category.setName(categoryBindingModel.getName());
@@ -124,9 +123,4 @@ public class CategoryController {
 
         return "redirect:/admin/categories/";
     }
-
-
-
 }
-
-
