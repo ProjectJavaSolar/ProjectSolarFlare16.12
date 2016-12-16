@@ -24,22 +24,50 @@ import java.util.Set;
 @Controller
 @RequestMapping("/admin/users")
 public class AdminUserController {
-
     @Autowired
     private UserRepository userRepository;
     @Autowired
     private ArticleRepository articleRepository;
     @Autowired
     private RoleRepository roleRepository;
-
     @GetMapping("/")
     public String listUsers(Model model){
-        List<User> users = this.userRepository.findAll();
+        List<User> users= this.userRepository.findAll();
 
-        model.addAttribute("users", users);
-        model.addAttribute("view", "admin/user/list");
+        model.addAttribute("users",users);
+        model.addAttribute("view","admin/user/list");
 
         return "base-layout";
+    }
+
+    @PostMapping("/edit/{id}")
+    public String editProcess(@PathVariable Integer id,
+                              UserEditBindingModel userBindingModel){
+        if(!this.userRepository.exists(id)){
+            return "redirect:/admin/users/";
+        }
+
+        User user = this.userRepository.findOne(id);
+
+        if(!StringUtils.isEmpty(userBindingModel.getPassword())
+            && !StringUtils.isEmpty(userBindingModel.getConfirmPassword())){
+            if(!userBindingModel.getPassword().equals(userBindingModel.getConfirmPassword())){
+                BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+
+                user.setPassword(bCryptPasswordEncoder.encode(userBindingModel.getPassword()));
+                user.setFullName(userBindingModel.getFullName());
+                user.setEmail(userBindingModel.getEmail());
+            }
+
+            Set<Role> roles = new HashSet<>();
+
+            for (Integer roleId : userBindingModel.getRoles()){
+                roles.add(this.roleRepository.findOne(roleId));
+            }
+            user.setRoles(roles);
+        }
+        this.userRepository.saveAndFlush(user);
+        return "redirect:/admin/user/";
     }
 
     @GetMapping("/edit/{id}")
@@ -58,40 +86,6 @@ public class AdminUserController {
         return "base-layout";
     }
 
-    @PostMapping("/edit/{id}")
-    public String editProcess(@PathVariable Integer id,
-                              UserEditBindingModel userBindingModel){
-        if(!this.userRepository.exists(id)){
-            return "redirect:/admin/users/";
-        }
-
-        User user = this.userRepository.findOne(id);
-
-        if(!StringUtils.isEmpty(userBindingModel.getPassword())
-                && !StringUtils.isEmpty(userBindingModel.getConfirmPassword())){
-
-            if(userBindingModel.getPassword().equals(userBindingModel.getConfirmPassword())){
-                BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-
-                user.setPassword(bCryptPasswordEncoder.encode(userBindingModel.getPassword()));
-            }
-        }
-        user.setFullName(userBindingModel.getFullName());
-        user.setEmail(userBindingModel.getEmail());
-
-        Set<Role> roles = new HashSet<>();
-
-        for(Integer roleId : userBindingModel.getRoles()){
-            roles.add(this.roleRepository.findOne(roleId));
-        }
-
-        user.setRoles(roles);
-
-        this.userRepository.saveAndFlush(user);
-
-        return "redirect:/admin/users/";
-    }
-
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable Integer id, Model model){
         if(!this.userRepository.exists(id)){
@@ -107,18 +101,20 @@ public class AdminUserController {
     }
 
     @PostMapping("/delete/{id}")
-    public String deleteProcess(@PathVariable Integer id){
-        if(!this.userRepository.exists(id)){
+    public String deleteProcess(@PathVariable Integer id) {
+        if (!this.userRepository.exists(id)) {
             return "redirect:/admin/users/";
         }
+
         User user = this.userRepository.findOne(id);
 
-        for(Article article : user.getArticles()){
+        for (Article article : user.getArticles()) {
             this.articleRepository.delete(article);
         }
 
         this.userRepository.delete(user);
 
-        return "redirect:/admin/users/";
+        return "redirect:/admin/user/";
     }
+
 }

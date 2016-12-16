@@ -1,6 +1,7 @@
 package space.bindingModel;
 
 public class CategoryBindingModel {
+
     private String name;
 
     public String getName() { return name; }
