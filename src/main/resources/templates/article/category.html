@@ -4,7 +4,7 @@
 
 
 
-	text {
+        text {
             filter: url(#filter);
             fill: white;
             font-family: 'Share Tech Mono', sans-serif;
@@ -17,7 +17,7 @@
     <defs>
 
         <filter id="filter">
-            
+
             <feFlood flood-color="red" result="flood1" />
             <feFlood flood-color="limegreen" result="flood2" />
             <feOffset in="SourceGraphic" dx="3" dy="0" result="off1a"/>
@@ -95,3 +95,17 @@
         <text x="0" y="100">Solar Flare</text>
     </g>
 </svg>
+<main>
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-6" th:each="category : ${categories}">
+                <header>
+                    <h2>
+                        <a th:href="@{/category/{id}(id=${category.id})}" th:text="${category.name + ' (' + #sets.size(category.articles) + ')'}">
+                        </a>
+                    </h2>
+                </header>
+            </div>
+        </div>
+    </div>
+</main>

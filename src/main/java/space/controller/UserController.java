@@ -41,6 +41,10 @@ public class UserController {
             return "redirect:/register";
         }
 
+       //if(this.userRepository.findByEmail(principal.getUsername().exists(id))){
+       //    return "redirect:/error/402";
+       //}
+
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
         User user = new User(
@@ -90,7 +94,4 @@ public class UserController {
 
         return "base-layout";
     }
-
-
 }
-

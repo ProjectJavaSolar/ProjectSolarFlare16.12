@@ -16,18 +16,19 @@ import java.util.Set;
 @Controller
 public class HomeController {
 
-    @GetMapping("/")
-    public String index(Model model) {
-        List<Category> categories = this.categoryRepository.findAll();
-
-        model.addAttribute("view", "home/index");
-        model.addAttribute("categories", categories);
-        return "base-layout";
-    }
-
     @Autowired
     private CategoryRepository categoryRepository;
 
+    @GetMapping("/")
+    public String index(Model model) {
+
+        List<Category> categories =this.categoryRepository.findAll();
+
+        model.addAttribute("view", "home/index");
+        model.addAttribute("categories", categories);
+
+        return "base-layout";
+    }
     @RequestMapping("/error/403")
     public String accessDenied(Model model){
         model.addAttribute("view", "error/403");
@@ -37,17 +38,26 @@ public class HomeController {
 
     @GetMapping("/category/{id}")
     public String listArticles(Model model, @PathVariable Integer id){
-
         if(!this.categoryRepository.exists(id)){
             return "redirect:/";
         }
+
         Category category = this.categoryRepository.findOne(id);
         Set<Article> articles = category.getArticles();
 
         model.addAttribute("articles", articles);
         model.addAttribute("category", category);
-
         model.addAttribute("view", "home/list-articles");
+
+        return "base-layout";
+    }
+    @GetMapping("/category")
+    public String listCategories(Model model) {
+
+        List<Category> categories =this.categoryRepository.findAll();
+
+        model.addAttribute("view", "article/category");
+        model.addAttribute("categories", categories);
 
         return "base-layout";
     }

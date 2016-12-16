@@ -1,53 +1,142 @@
 <header th:fragment="header" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <a th:href="@{/}" class="navbar-brand">SOFTUNI BLOG</a>
+    <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="glyphicon glyphicon-bookmark"></i></a>
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" class="btn btn-default btn-lg pull-right toggle"><i class="glyphicon glyphicon-remove"></i></a>
 
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown" sec:authorize="hasRole('ADMIN')">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin<span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a th:href="@{/admin/users/}">Users</a></li>
-                            <li><a th:href="@{/admin/categories/}">Categories</a></li>
-                        </ul>
-                    </li>
-                    <li sec:authorize="isAuthenticated()">
-                        <a th:href="@{/article/create}">
-                            Create Article
-                        </a>
-                    </li>
+            <h1 class="text-center">Navigation</h1>
 
-                    <li sec:authorize="isAuthenticated()">
-                        <a th:href="@{/profile}">
-                            My Profile
-                        </a>
-                    </li>
-                    <li sec:authorize="isAuthenticated()">
-                        <a th:href="@{/logout}">
-                            Logout
-                        </a>
-                    </li>
+            <li class="sidebar-brand">
+                <a th:href="@{/}">Home</a>
+            </li>
 
-                    <li sec:authorize="isAnonymous()">
-                        <a th:href="@{/register}">
-                            REGISTER
-                        </a>
-                    </li>
-                    <li sec:authorize="isAnonymous()">
-                        <a th:href="@{/login}">
-                            LOGIN
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+            <li class="sidebar-brand" sec:authorize="isAnonymous()">
+                <a th:href="@{/login}" class="smoothScroll">Log In</a>
+            </li>
+
+            <li class="sidebar-brand" sec:authorize="isAnonymous()">
+                <a th:href="@{/register}" class="smoothScroll">Register</a>
+            </li>
+
+            <li class="sidebar-brand" sec:authorize="isAuthenticated()">
+                <a th:href="@{/logout}" class="smoothScroll">Logout</a>
+            </li>
+
+            <li class="sidebar-brand" sec:authorize="isAuthenticated()">
+                <a th:href="@{/profile}" class="smoothScroll">My Profile</a>
+            </li>
+
+            <li class="sidebar-brand">
+                <a th:href="@{/planets}">Solar System</a>
+            </li>
+
+            <li class="sidebar-brand">
+                <a th:href="@{/category}">Articles</a>
+            </li>
+            <li class="sidebar-brand">
+                <a th:href="@{/funfact}">Fun Facts</a>
+            </li>
+            <li class="sidebar-brand" sec:authorize="hasRole('ADMIN')">
+                <a th:href="@{/admin/categories/}" class="smoothScroll">Edit Categories</a>
+            </li>
+            <li class="sidebar-brand" sec:authorize="hasRole('ADMIN')">
+                <a th:href="@{/admin/users/}" class="smoothScroll">Edit Users</a>
+            </li>
+
+        </ul>
     </div>
+    <!--<nav class="nav navbar-nav" id="theMenu">-->
+        <!--<div class="menu-wrap">-->
+            <!--<h1 class="logo">Navigation</h1>-->
+            <!--<i class="icon-remove menu-close"></i>-->
+            <!--<a href="/" class="smoothScroll">Home</a>-->
+
+
+            <!--<li><a th:href="@{/login}" sec:authorize="isAnonymous()">Log In </a></li>-->
+
+            <!--<div class="box">-->
+                <!--<a sec:authorize="isAnonymous()">-->
+                    <!--<a th:href="@{/register}">Register</a>-->
+                <!--</a>-->
+            <!--</div>-->
+            <!--<div class="box">-->
+                <!--<a sec:authorize="isAuthenticated()">-->
+                    <!--<a th:href="@{/logout}">Logout</a>-->
+                <!--</a>-->
+            <!--</div>-->
+            <!--<div class="box">-->
+                <!--<a sec:authorize="isAuthenticated()">-->
+                    <!--<a th:href="@{/profile}">My Profile</a>-->
+                <!--</a>-->
+            <!--</div>-->
+            <!--<div class="box">-->
+                <!--<a href="#solarsystem" class="smoothScroll">Solar system</a>-->
+            <!--</div>-->
+            <!--<div class="box">-->
+                <!--<a href="#Picture of the day" class="smoothScroll"> Picture of the day</a>-->
+            <!--</div>-->
+            <!--<div class="box">-->
+                <!--<a href="facts.html" class="smoothScroll">Fun Facts</a>-->
+            <!--</div>-->
+            <!--<div class="box">-->
+                <!--<a href="#contact" class="smoothScroll">Contact</a>-->
+            <!--</div>-->
+
+
+        <!--</div>-->
+
+        <!--&lt;!&ndash; Menu button &ndash;&gt;-->
+        <!--<div id="menuToggle"><i class="icon-reorder"></i></div>-->
+    <!--</nav>-->
+
+
+    <!--<div class="navbar navbar-default navbar-static-top" role="navigation">-->
+    <!--<div class="container">-->
+    <!--<div class="navbar-header">-->
+    <!--<a th:href="@{/}" class="navbar-brand">Solar Flare</a>-->
+    <!---->
+    <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">-->
+    <!--<span class="icon-bar"></span>-->
+    <!--<span class="icon-bar"></span>-->
+    <!--<span class="icon-bar"></span>-->
+    <!--</button>-->
+    <!--</div>-->
+    <!--<div class="navbar-collapse collapse">-->
+    <!--<ul class="nav navbar-nav navbar-right">-->
+    <!--<li class="dropdown" sec:authorize="hasRole('ADMIN')">-->
+    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin<span class="caret"></span></a>-->
+    <!--<ul class="dropdown-menu" role="menu">-->
+    <!--<li><a th:href="@{/admin/users/}">Users</a></li>-->
+    <!--<li><a th:href="@{/admin/categories/}">Categories</a></li>-->
+    <!--</ul>-->
+    <!--</li>-->
+    <!--<li sec:authorize="isAuthenticated()">-->
+    <!--<a th:href="@{/article/create}">-->
+    <!--Create Article-->
+    <!--</a>-->
+    <!--</li>-->
+
+    <!--<li sec:authorize="isAuthenticated()">-->
+    <!--<a th:href="@{/profile}">-->
+    <!--My Profile-->
+    <!--</a>-->
+    <!--</li>-->
+    <!--<li sec:authorize="isAuthenticated()">-->
+    <!--<a th:href="@{/logout}">-->
+    <!--Logout-->
+    <!--</a>-->
+    <!--</li>-->
+
+    <!--<li sec:authorize="isAnonymous()">-->
+    <!--<a th:href="@{/register}">-->
+    <!--REGISTER-->
+    <!--</a>-->
+    <!--</li>-->
+    <!--<li sec:authorize="isAnonymous()">-->
+    <!--<a th:href="@{/login}">LOGIN</a>-->
+    <!--</li>&ndash;&gt;-->
+    <!--</ul>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
 </header>
