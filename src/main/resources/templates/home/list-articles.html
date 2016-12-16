@@ -1,6 +1,6 @@
 <main>
     <div class="container body-content">
-        <h1>Category - <th:block th:text="${category.name}"></th:block></h1>
+        <h1><th:block th:text="${category.name}"></th:block> Articles</h1>
         <div class="row">
             <th:block th:each="article : ${articles}">
                 <div class="col-md-5">

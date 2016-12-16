@@ -1687,6 +1687,7 @@ pre code {
     margin-left: auto;
     padding-left: 15px;
     padding-right: 15px;
+
 }
 @media (min-width: 768px) {
     .container {
@@ -2603,6 +2604,7 @@ legend {
     padding: 0;
     margin-bottom: 21px;
     margin-top: 15%;
+    margin-left: 38%;
     font-size: 43.5px;
     line-height: inherit;
     color: #ffffff;
@@ -7084,6 +7086,8 @@ input:focus {
     margin-left: 20%;
     margin-right: 24%;
     margin-bottom: 10%;
+    MARGIN-TOP: 8%;
+
 }
 a.list-group-item.active,
 a.list-group-item.active:hover,
