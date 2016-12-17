@@ -5070,9 +5070,11 @@ a.thumbnail.active {
 }
 .alert {
     padding: 15px;
+    margin-top: 18%;
     margin-bottom: 21px;
     border: 1px solid transparent;
-    border-radius: 4px;
+    border-radius: 0px;
+    text-align: center;
 }
 .alert h4 {
     margin-top: 0;
@@ -5091,6 +5093,7 @@ a.thumbnail.active {
 .alert-dismissable,
 .alert-dismissible {
     padding-right: 35px;
+    padding: 3%;
 }
 .alert-dismissable .close,
 .alert-dismissible .close {
@@ -5133,8 +5136,8 @@ a.thumbnail.active {
     color: #e6e6e6;
 }
 .alert-danger {
-    background-color: #e74c3c;
-    border-color: #e74c3c;
+    background-color: rgba(14, 8, 8, 0.61);
+    border-color: #ffffff;
     color: #ffffff;
 }
 .alert-danger hr {
