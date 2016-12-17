@@ -96,6 +96,28 @@
     </g>
 </svg>
 <main>
+
+    <div class="container body-content span=5 offset=5">
+
+            <form class="form-horizontal" th:action="@{/login}" method="post">
+                <fieldset>
+                    <center><legend>
+                        <div class="roww">
+                            <div class="btnn mdd ghost">
+                                <li class="btnn mdd ghost" sec:authorize="isAuthenticated()">
+                                    <a th:href="@{/article/create}" class="btnn mdd ghost">Tell Us Something We Don't Know</a>
+                                </li>
+                            </div>
+                        </div>
+                    </legend></center>
+
+                </fieldset>
+            </form>
+      
+    </div>
+</main>
+
+<main>
     <div class="container body-content">
         <div class="row">
             <div class="col-md-6" th:each="category : ${categories}">
