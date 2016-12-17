@@ -24,7 +24,7 @@ svg{
 
 body {
 
-    background: url("../img/milkyway.jpg") no-repeat center fixed;
+    background: url("../img/space-hd.jpg") no-repeat center fixed;
     background-size: cover;
 
     padding-top: 0;
@@ -1340,6 +1340,7 @@ h3,
 h4,
 .h4 {
     font-size: 39px;
+    text-align: justify;
     font-family: agency fb;
 }
 h5,
@@ -1647,7 +1648,6 @@ pre code {
 }
 .container {
     position: relative;
-    background-color: rgba(255, 255, 255, 0.13);
     color: #e6e6e6;
     font-family: agency-fb;
 }
