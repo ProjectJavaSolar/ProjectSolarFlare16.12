@@ -1,6 +1,7 @@
 package space.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -28,6 +29,7 @@ public class Article {
     public void setId(Integer id) {
         this.id = id;
     }
+    @NotNull
     @Column(nullable = false)
     public String getTitle() {
         return title;
@@ -36,6 +38,7 @@ public class Article {
     public void setTitle(String title) {
         this.title = title;
     }
+    @NotNull
     @Column(columnDefinition = "text", nullable = false)
     public String getContent() {
         return content;

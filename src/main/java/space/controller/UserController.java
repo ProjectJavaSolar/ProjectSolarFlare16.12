@@ -41,11 +41,13 @@ public class UserController {
             return "redirect:/register";
         }
 
-       //if(this.userRepository.findByEmail(principal.getUsername().exists(id))){
-       //    return "redirect:/error/402";
-       //}
+//       if(this.userRepository.findByEmail(principal.getUsername().exists(email))){
+//           return "redirect:/error/402";
+//       }
 
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+try {
+
 
         User user = new User(
                 userBindingModel.getEmail(),
@@ -60,6 +62,8 @@ public class UserController {
         this.userRepository.saveAndFlush(user);
 
         return "redirect:/login";
+    } catch (Exception E){return "redirect:/error/402";
+    }
     }
 
     @GetMapping("/login")
