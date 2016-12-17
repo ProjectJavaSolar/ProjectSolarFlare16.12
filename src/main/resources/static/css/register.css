@@ -440,9 +440,7 @@ th {
 .glyphicon-ok:before {
     content: "\e013";
 }
-.glyphicon-remove:before {
-    content: "\e014";
-}
+
 .glyphicon-zoom-in:before {
     content: "\e015";
 }
@@ -1325,8 +1323,8 @@ h2,
 .h2,
 h3,
 .h3 {
-    margin-top: 21px;
-    margin-bottom: 10.5px;
+    margin-top: 69px;
+    margin-bottom: 8.5px;
 }
 h1 small,
 .h1 small,
@@ -1367,7 +1365,7 @@ h6 .small,
 }
 h1,
 .h1 {
-    font-size: 39px;
+    font-size: 32px;
 }
 h2,
 .h2 {
