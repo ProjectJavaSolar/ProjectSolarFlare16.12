@@ -61,4 +61,11 @@ public class HomeController {
 
         return "base-layout";
     }
+
+    @GetMapping("/error/402")
+    public String registerError(Model model){
+        model.addAttribute("view", "error/402");
+
+        return "base-layout";
+    }
 }

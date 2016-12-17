@@ -20,6 +20,7 @@ import space.repository.CategoryRepository;
 import space.repository.TagRepository;
 import space.repository.UserRepository;
 
+import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -49,6 +50,7 @@ public class ArticleController {
         return "base-layout";
     }
 
+    @NotNull
     @PostMapping("/article/create")
     @PreAuthorize("isAuthenticated()")
     public String createProcess(ArticleBindingModel articleBindingModel){
