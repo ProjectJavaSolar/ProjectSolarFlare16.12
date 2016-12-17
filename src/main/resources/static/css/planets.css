@@ -1132,6 +1132,7 @@ body {
     line-height: 1.42857143;
     color: #2c3e50;
     background-color: #ffffff;
+    width: 40%;
 }
 input,
 button,
@@ -1329,7 +1330,7 @@ h2,
 }
 h3,
 .h3 {
-    font-size: 60px;
+    font-size: 58px;
     font-family: ar destine;
     color: white;
     position: relative;
