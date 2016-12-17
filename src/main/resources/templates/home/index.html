@@ -94,4 +94,80 @@
     <g>
         <text x="0" y="100">Solar Flare</text>
     </g>
+    <style>
+        img:hover {
+            box-shadow: 0px 0px 30px #000000;
+            z-index: 2;
+            -webkit-transition: all 200ms ease-in;
+            -webkit-transform: scale(1.2);
+            -ms-transition: all 200ms ease-in;
+            -ms-transform: scale(1.2);
+            -moz-transition: all 200ms ease-in;
+            -moz-transform: scale(1.2);
+            transition: all 200ms ease-in;
+            transform: scale(1.2);
+        }
+        img {
+            display:inline-block;
+            border:50px;
+            width:120px;
+            height:450px;
+            position: relative;
+            -webkit-transition: all 200ms ease-in;
+            -webkit-transform: scale(2);
+            -ms-transition: all 200ms ease-in;
+            -ms-transform: scale(1);
+            -moz-transition: all 200ms ease-in;
+            -moz-transform: scale(1);
+            transition: all 200ms ease-in;
+            transform: scale(1);
+
+        }
+        div.imgcont{
+            padding-right: 150px;
+            padding-left: 15px;
+            margin-right: -100px;
+            margin-left: 100px;
+        }
+        div.moveimage
+        {
+            position: relative;
+            top: 50px;
+        }
+        img.responsive-image {
+            height: auto;
+            width: 10%;
+        }
+    </style>
+    <div class="moveimage">
+        <div class="imgcont">
+            <a href="1">
+                <img class="responsive-image" src="/img/1mercury.png" />
+            </a>
+            <a href="2">
+                <img class="responsive-image" src="/img/2venus.png"   />
+            </a>
+            <a href="3">
+                <img class="responsive-image" src="/img/3earth.png"   />
+            </a>
+            <a href="4">
+                <img class="responsive-image" src="/img/4mars.png"   />
+            </a>
+            <a href="5">
+                <img class="responsive-image" src="/img/5jupiter.png" />
+            </a>
+            <a href="6">
+                <img class="responsive-image" src="/img/6saturn.png" />
+            </a>
+            <a href="7">
+                <img class="responsive-image" src="/img/7uranus.png"  />
+            </a>
+            <a href="8">
+                <img class="responsive-image" src="/img/8neptune.png" />
+            </a>
+            <a href="9">
+                <img class="responsive-image" src="/img/9pluto.png"   />
+            </a>
+        </div>
+    </div>
 </svg>
