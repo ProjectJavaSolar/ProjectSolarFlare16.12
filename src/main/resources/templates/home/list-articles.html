@@ -1,3 +1,11 @@
+<head th:fragment="head">
+
+    <link th:href="@{/css/list-articles.css}" rel="stylesheet" type="text/css"/>
+
+</head>
+<main>
+
+
 <main>
     <div class="container body-content">
         <h1><th:block th:text="${category.name}"></th:block> Articles</h1>
@@ -12,16 +20,15 @@
                         <p th:text="${article.summary}"></p>
 
                         <small class="author" th:text="${article.author.fullName}"></small>
-                        <p>
-                            <a class="btn btn-default btn-xs" th:each="tag:${article.tags}" th:href="@{/tag/{name}(name=${tag.name})}" th:text="${tag.name}"></a>
-                        </p>
+
+
 
 
                         <footer>
-                            <div class="pull-right">
-                                <a class="btn btn-default btn-xs"
+                            <div class="roww">
+                                <a class="btnn smm ghost"
                                    th:href="@{/article/{id}(id=${article.id})}">Read more</a>
-                                <a class="btn btn-default btn-xs" th:href="@{/category}">back</a>
+                                <a class="btnn smm ghost " th:href="@{/category}">Back</a>
                             </div>
                         </footer>
                     </article>
@@ -29,4 +36,5 @@
             </th:block>
         </div>
     </div>
+</main>
 </main>
