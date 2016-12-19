@@ -1126,7 +1126,7 @@ body {
     font-family: Chalkduster, fantasy;
     font-size: 17px;
     line-height: 1.42857143;
-    color: #2c3e50;
+    color: #ffffff;
     background-color: #ffffff;
     text-align: center;
 }
@@ -1228,7 +1228,7 @@ h6,
     font-family: Chalkduster, fantasy;
     font-weight: 400;
     line-height: 1.1;
-    color: inherit;
+    color: whitesmoke;
 }
 h1 small,
 h2 small,

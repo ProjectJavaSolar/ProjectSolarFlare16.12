@@ -95,9 +95,16 @@
         </filter>
 
     </defs>
-    <g>
-        <text x="0" y="100" id="home">Solar Flare</text>
-    </g>
+    <style>
+
+    </style>
+
+
+    <div class="header">
+<g>
+        <text x="0" y="100" id="home" class="smoothScroll">Solar Flare</text>
+</g>
+    </div>
 
     <style>
         img:hover {
@@ -145,19 +152,50 @@
         }
     </style>
 
+    <!--smooth scroll begin-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $("a").on('click', function(event) {
+
+                if (this.hash !== "") {
+
+                    event.preventDefault();
+
+                    var hash = this.hash;
+
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function(){
+
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+    </script>
+
+    <style>
+        body, html, .main {
+            height: 100%;
+        }
+
+        section {
+            min-height: 100%;
+        }
+    </style>
+
+    <!--smooth scroll end-->
 </svg>
 
 <html>
 <head>
     <style>
         .parallax {
-            /* The image used */
-            /*background-image: url("static/img/all.jpg");*/
-
-            /* Set a specific height */
             min-height: 500px;
 
-            /* Create the parallax scrolling effect */
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
@@ -173,7 +211,7 @@
 <div class="parallax"></div>
 
 <div style="height:1000px;background-color:transparent;font-size:36px">
-    <div id="solarSystem"><h3>Solar system</h3></div>
+    <div id="solarSystem" class="smoothScroll"><h3>Solar system</h3></div>
 
     <div class="moveimage">
         <div class="imgcont">
@@ -209,8 +247,17 @@
         </div>
     </div>
 </div>
+<!---->
 
-<div id="funFact">FunFacts</div>
+<div class="main">
+    <section></section>
+</div>
+
+<div class="main" id="section2">
+    <section style="background-color:blue"></section>
+</div>
+<!---->
+<div id="funFact" class="smoothScroll">FunFacts</div>
 <p>
     at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
     at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
@@ -234,5 +281,5 @@
 </p>
 </body>
 </html>
-
+<script src="/static/scripts/smoothscroll.js"></script>
 
