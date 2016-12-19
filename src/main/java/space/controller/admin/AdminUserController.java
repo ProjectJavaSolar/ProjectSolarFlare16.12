@@ -39,7 +39,7 @@ public class AdminUserController {
         model.addAttribute("users", users);
         model.addAttribute("view", "admin/user/list");
 
-        return "base-layout";
+        return "base-layout2";
     }
 
     @GetMapping("/edit/{id}")
@@ -55,7 +55,7 @@ public class AdminUserController {
         model.addAttribute("roles", roles);
         model.addAttribute("view", "admin/user/edit");
 
-        return "base-layout";
+        return "base-layout2";
     }
 
     @PostMapping("/edit/{id}")
@@ -103,7 +103,7 @@ public class AdminUserController {
         model.addAttribute("user", user);
         model.addAttribute("view", "admin/user/delete");
 
-        return "base-layout";
+        return "base-layout2";
     }
 
     @PostMapping("/delete/{id}")

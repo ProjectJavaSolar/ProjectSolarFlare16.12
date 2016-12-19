@@ -41,7 +41,7 @@ public class CategoryController {
 
         model.addAttribute("categories", categories);
 
-        return "base-layout";
+        return "base-layout2";
 
     }
 
@@ -49,7 +49,7 @@ public class CategoryController {
     public String create(Model model){
         model.addAttribute("view", "admin/category/create");
 
-        return "base-layout";
+        return "base-layout2";
     }
 
     @PostMapping("/create")
@@ -75,7 +75,7 @@ public class CategoryController {
         model.addAttribute("category", category);
         model.addAttribute("view", "admin/category/edit");
 
-        return "base-layout";
+        return "base-layout2";
     }
 
     @PostMapping("/edit/{id}")
@@ -104,7 +104,7 @@ public class CategoryController {
         model.addAttribute("category", category);
         model.addAttribute("view", "admin/category/delete");
 
-        return "base-layout";
+        return "base-layout2";
     }
 
     @PostMapping("/delete/{id}")

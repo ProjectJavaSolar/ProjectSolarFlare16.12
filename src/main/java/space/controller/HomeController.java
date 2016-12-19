@@ -33,23 +33,24 @@ public class HomeController {
     @GetMapping("/")
     public String index(Model model) {
 
-        List<Category> categories =this.categoryRepository.findAll();
+        List<Category> categories = this.categoryRepository.findAll();
 
         model.addAttribute("view", "home/index");
         model.addAttribute("categories", categories);
 
         return "base-layout";
     }
+
     @RequestMapping("/error/403")
-    public String accessDenied(Model model){
+    public String accessDenied(Model model) {
         model.addAttribute("view", "error/403");
 
         return "base-layout2";
     }
 
     @GetMapping("/category/{id}")
-    public String listArticles(Model model, @PathVariable Integer id){
-        if(!this.categoryRepository.exists(id)){
+    public String listArticles(Model model, @PathVariable Integer id) {
+        if (!this.categoryRepository.exists(id)) {
             return "redirect:/";
         }
 
@@ -62,10 +63,11 @@ public class HomeController {
 
         return "base-layout2";
     }
+
     @GetMapping("/category")
     public String listCategories(Model model) {
 
-        List<Category> categories =this.categoryRepository.findAll();
+        List<Category> categories = this.categoryRepository.findAll();
 
         model.addAttribute("view", "article/category");
         model.addAttribute("categories", categories);
@@ -74,43 +76,31 @@ public class HomeController {
     }
 
     @GetMapping("/error/402")
-    public String registerError(Model model){
+    public String registerError(Model model) {
         model.addAttribute("view", "error/402");
 
         return "base-layout2";
     }
 
-    @GetMapping("/funfact/details")
-    public String factDetails(Model model){
+    @GetMapping("/funfact/list")
+    public String factDetails(Model model) {
 //        Integer idMax = "SELECT COUNT (id) FROM funfacts";
 
 //        int min = 1;
 //        int max = GetMaxIdNumber();
+
+
+
         Random rand = new Random();
-        int funId = rand.nextInt((4-1) + 1) + 1;
 
+        List<FunFact> facts = this.funFactRepository.findAll();
+       // FunFact randomFunFact = facts.get(rand.nextInt(facts.size()));
 
-
-        FunFact funfacts = this.funFactRepository.findOne(funId);
-
-        model.addAttribute("view", "funfact/details");
-        model.addAttribute("funfacts", funfacts);
+        model.addAttribute("view", "funfact/list");
+        model.addAttribute("funFact", facts);
 
         return "base-layout";
     }
-  // public static ResultSet GetMaxIdNumber(Connection con, String project)
-  //     throws SQLException {
-  //         Statement stmt = null;
-  //         String query = "select max (id) from funfacts order by id desc limit 1";
-  //         try {
-  //             stmt = con.createStatement();
-  //             ResultSet rs = stmt.executeQuery(query);
-  //             int idNum = rs.getInt("id");
-  //             int maxId = idNum;
-  //             return rs;
-  //         }catch (SQLException e) {return "redirect:/error/402";
-  //         }
-  // }
 }
 
 

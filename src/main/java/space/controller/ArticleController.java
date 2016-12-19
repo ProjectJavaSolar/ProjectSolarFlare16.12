@@ -71,12 +71,12 @@ public class ArticleController {
         );
         this.articleRepository.saveAndFlush(articleEntity);
 
-        return "redirect:/";
+        return "redirect:/category";
     }
     @GetMapping("/article/{id}")
     public String details(Model model, @PathVariable Integer id){
         if(!this.articleRepository.exists(id)){
-            return "redirect:/";
+            return "redirect:/category";
         }
 
         if(!(SecurityContextHolder.getContext().getAuthentication()
@@ -150,7 +150,7 @@ public class ArticleController {
     @PreAuthorize("isAuthenticated()")
     public String delete(Model model, @PathVariable Integer id){
         if(!this.articleRepository.exists(id)){
-            return "redirect:/";
+            return "redirect:/category";
         }
 
         Article article = this.articleRepository.findOne(id);
@@ -169,7 +169,7 @@ public class ArticleController {
     @PreAuthorize("isAuthenticated()")
     public String deleteProcess(@PathVariable Integer id){
         if(!this.articleRepository.exists(id)){
-            return "redirect:/";
+            return "redirect:/category";
         }
 
         Article article = this.articleRepository.findOne(id);
@@ -180,7 +180,7 @@ public class ArticleController {
 
         this.articleRepository.delete(article);
 
-        return "redirect:/";
+        return "redirect:/category";
     }
 
     private HashSet<Tag> findTagsFromString(String tagString){
