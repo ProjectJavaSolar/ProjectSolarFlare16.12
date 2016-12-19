@@ -24,6 +24,6 @@ public class TagController {
         model.addAttribute("view", "tag/articles");
         model.addAttribute("tag", tag);
 
-        return "base-layout";
+        return "base-layout2";
     }
 }

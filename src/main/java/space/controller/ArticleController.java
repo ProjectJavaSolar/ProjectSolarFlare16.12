@@ -47,7 +47,7 @@ public class ArticleController {
         model.addAttribute("categories", categories);
         model.addAttribute("view", "article/create");
 
-        return "base-layout";
+        return "base-layout2";
     }
 
     @NotNull
@@ -92,7 +92,7 @@ public class ArticleController {
         model.addAttribute("article", article);
         model.addAttribute("view", "article/details");
 
-        return "base-layout";
+        return "base-layout2";
     }
 
     @GetMapping("/article/edit/{id}")
@@ -117,7 +117,7 @@ public class ArticleController {
         model.addAttribute("article", article);
         model.addAttribute("categories", categories);
         model.addAttribute("tags", tagString);
-        return "base-layout";
+        return "base-layout2";
     }
 
     @PostMapping("/article/edit/{id}")
@@ -162,7 +162,7 @@ public class ArticleController {
         model.addAttribute("article", article);
         model.addAttribute("view", "article/delete");
 
-        return "base-layout";
+        return "base-layout2";
     }
 
     @PostMapping("/article/delete/{id}")

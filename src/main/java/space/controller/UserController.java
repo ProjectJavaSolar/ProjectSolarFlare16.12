@@ -31,7 +31,7 @@ public class UserController {
     public String register(Model model) {
         model.addAttribute("view", "user/register");
 
-        return "base-layout";
+        return "base-layout2";
     }
 
     @PostMapping("/register")
@@ -70,7 +70,7 @@ try {
     public String login(Model model){
         model.addAttribute("view", "user/login");
 
-        return "base-layout";
+        return "base-layout2";
     }
 
     @RequestMapping(value="/logout", method = RequestMethod.GET)
@@ -96,6 +96,6 @@ try {
         model.addAttribute("user", user);
         model.addAttribute("view", "user/profile");
 
-        return "base-layout";
+        return "base-layout2";
     }
 }

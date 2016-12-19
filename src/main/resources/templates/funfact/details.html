@@ -1,0 +1,23 @@
+<main>
+    <div class="container body-content">
+        <div class="row">
+            <th:block th:each="funFact : ${funfacts}">
+                <div class="col-md-6">
+                    <article>
+                        <header>
+                            <h2></h2>
+                        </header>
+
+                        <p th:text="${funFact.summary}"></p>
+
+
+
+                        <footer>
+
+                        </footer>
+                    </article>
+                </div>
+            </th:block>
+        </div>
+    </div>
+</main>

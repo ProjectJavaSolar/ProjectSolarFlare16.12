@@ -13,38 +13,56 @@ public class PlanetController {
 
     @GetMapping("/mercury")
     public String mercury(Model model){
-        return "planets/mercury";
+        model.addAttribute("view", "planets/mercury");
+
+        return "base-layout2";
     }
     @GetMapping("/venus")
     public String venus(Model model){
-        return "planets/venus";
+        model.addAttribute("view", "planets/venus");
+
+        return "base-layout2";
     }
     @GetMapping("/earth")
     public String earth(Model model){
-        return "planets/earth";
+        model.addAttribute("view", "planets/earth");
+
+        return "base-layout2";
     }
     @GetMapping("/mars")
     public String mars(Model model){
-        return "planets/mars";
+        model.addAttribute("view", "planets/mars");
+
+        return "base-layout2";
     }
     @GetMapping("/jupiter")
     public String jupiter(Model model){
-        return "planets/jupiter";
+        model.addAttribute("view", "planets/jupiter");
+
+        return "base-layout2";
     }
     @GetMapping("/saturn")
     public String saturn(Model model){
-        return "planets/saturn";
+        model.addAttribute("view", "planets/saturn");
+
+        return "base-layout2";
     }
     @GetMapping("/uranus")
     public String uranus(Model model){
-        return "planets/uranus";
+        model.addAttribute("view", "planets/uranus");
+
+        return "base-layout2";
     }
     @GetMapping("/neptune")
     public String neptune(Model model){
-        return "planets/neptune";
+        model.addAttribute("view", "planets/neptune");
+
+        return "base-layout2";
     }
     @GetMapping("/pluto")
     public String pluto(Model model){
-        return "planets/pluto";
+        model.addAttribute("view", "planets/pluto");
+
+        return "base-layout2";
     }
 }

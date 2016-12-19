@@ -4,6 +4,7 @@ package space.bindingModel;
 import javax.validation.constraints.NotNull;
 
 public class FunFactBindingModel {
+
     @NotNull
     private String content;
 
