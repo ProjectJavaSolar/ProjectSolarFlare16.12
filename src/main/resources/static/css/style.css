@@ -15,16 +15,21 @@
 
 
 
-svg{
-    width: 600px;
+svg {
+    width: 100%;
     height: 120px;
     display: block;
     position: relative;
     overflow: hidden;
     margin: 0 auto;
+    background: -moz-linear-gradient(left, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.02) 2%, rgba(0,0,0,1) 26%, rgba(0,0,0,1) 27%, rgba(0,0,0,1) 29%, rgba(0,0,0,1) 31%, rgba(0,0,0,1) 34%, rgba(0,0,0,1) 45%, rgba(0,0,0,1) 47%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 54%, rgba(0,0,0,1) 60%, rgba(0,0,0,1) 61%, rgba(0,0,0,1) 68%, rgba(0,0,0,1) 74%, rgba(0,0,0,0.02) 99%, rgba(0,0,0,0.02) 100%, rgba(0,0,0,0.02) 101%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(0,0,0,0.02) 0%,rgba(0,0,0,0.02) 2%,rgba(0,0,0,1) 26%,rgba(0,0,0,1) 27%,rgba(0,0,0,1) 29%,rgba(0,0,0,1) 31%,rgba(0,0,0,1) 34%,rgba(0,0,0,1) 45%,rgba(0,0,0,1) 47%,rgba(0,0,0,1) 50%,rgba(0,0,0,1) 54%,rgba(0,0,0,1) 60%,rgba(0,0,0,1) 61%,rgba(0,0,0,1) 68%,rgba(0,0,0,1) 74%,rgba(0,0,0,0.02) 99%,rgba(0,0,0,0.02) 100%,rgba(0,0,0,0.02) 101%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(0,0,0,0.02) 0%,rgba(0,0,0,0.02) 2%,rgba(0,0,0,1) 26%,rgba(0,0,0,1) 27%,rgba(0,0,0,1) 29%,rgba(0,0,0,1) 31%,rgba(0,0,0,1) 34%,rgba(0,0,0,1) 45%,rgba(0,0,0,1) 47%,rgba(0,0,0,1) 50%,rgba(0,0,0,1) 54%,rgba(0,0,0,1) 60%,rgba(0,0,0,1) 61%,rgba(0,0,0,1) 68%,rgba(0,0,0,1) 74%,rgba(0,0,0,0.02) 99%,rgba(0,0,0,0.02) 100%,rgba(0,0,0,0.02) 101%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05000000', endColorstr='#05000000',GradientType=1 ); /* IE6-9 */
+
+background-color: rgba(0, 0, 0, 0.67)
+
 }
-
-
 
 body {
 
@@ -252,7 +257,7 @@ th {
     }
     a,
     a:visited {
-        text-decoration: underline;
+        text-decoration: none;
     }
     a[href]:after {
         content: " (" attr(href) ")";
@@ -311,11 +316,7 @@ th {
         border: 1px solid #ddd !important;
     }
 }
-@font-face {
-    font-family: 'Glyphicons Halflings';
-    src: url('../fonts/glyphicons-halflings-regular.eot');
-    src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
-}
+
 .glyphicon {
     position: relative;
     top: 1px;
@@ -702,7 +703,7 @@ th {
     content: "\e123";
 }
 .glyphicon-certificate:before {
-    content: "\e124";
+    content: "\e232";
 }
 .glyphicon-thumbs-up:before {
     content: "\e125";
@@ -1128,11 +1129,12 @@ html {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 15px;
+    font-family: Chalkduster, fantasy;
+    font-size: 17px;
     line-height: 1.42857143;
     color: #2c3e50;
     background-color: #ffffff;
+    text-align: center;
 }
 input,
 button,
@@ -1143,13 +1145,13 @@ textarea {
     line-height: inherit;
 }
 a {
-    color: #18bc9c;
+    color: #ffffff;
     text-decoration: none;
 }
 a:hover,
 a:focus {
-    color: #18bc9c;
-    text-decoration: underline;
+    color: rgba(131, 0, 131, 0.79);
+    text-decoration: none;
 }
 a:focus {
     outline: 5px auto -webkit-focus-ring-color;
@@ -1229,7 +1231,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Chalkduster, fantasy;
     font-weight: 400;
     line-height: 1.1;
     color: inherit;
@@ -3465,7 +3467,7 @@ fieldset[disabled] .btn-link {
 .btn-link:hover,
 .btn-link:focus {
     color: #18bc9c;
-    text-decoration: underline;
+    text-decoration: none;
     background-color: transparent;
 }
 .btn-link[disabled]:hover,
@@ -5094,6 +5096,8 @@ a.thumbnail.active {
 .alert-dismissible {
     padding-right: 35px;
     padding: 3%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 .alert-dismissable .close,
 .alert-dismissible .close {
@@ -6839,7 +6843,7 @@ button.close {
 }
 table a:not(.btn),
 .table a:not(.btn) {
-    text-decoration: underline;
+    text-decoration: none;
 }
 table .dropdown-menu a,
 .table .dropdown-menu a {
@@ -7007,7 +7011,7 @@ input:focus {
 }
 .alert .alert-link {
     color: #fff;
-    text-decoration: underline;
+    text-decoration: none;
 }
 .progress {
     height: 10px;
