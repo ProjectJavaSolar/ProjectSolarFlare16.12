@@ -1,0 +1,48 @@
+<header th:fragment="header" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+    <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="glyphicon glyphicon-bookmark"></i></a>
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" class="menu-toggle toggle btn pull-right "><i class="glyphicon glyphicon-remove"></i></a>
+
+            <h1 class="text-center">Navigation</h1>
+
+            <li class="sidebar-brand">
+                <a th:href="@{/}">Home</a>
+            </li>
+
+            <li class="sidebar-brand" sec:authorize="isAnonymous()">
+                <a th:href="@{/login}" class="smoothScroll">Log In</a>
+            </li>
+
+            <li class="sidebar-brand" sec:authorize="isAnonymous()">
+                <a th:href="@{/register}" class="smoothScroll">Register</a>
+            </li>
+
+            <li class="sidebar-brand" sec:authorize="isAuthenticated()">
+                <a th:href="@{/logout}" class="smoothScroll">Logout</a>
+            </li>
+
+            <li class="sidebar-brand" sec:authorize="isAuthenticated()">
+                <a th:href="@{/profile}" class="smoothScroll">My Profile</a>
+            </li>
+
+            <li class="sidebar-brand">
+                <a th:href="@{/planets}">Solar System</a>
+            </li>
+
+            <li class="sidebar-brand">
+                <a th:href="@{/category}">Articles</a>
+            </li>
+            <li class="sidebar-brand">
+                <a th:href="@{/funfact}">Fun Facts</a>
+            </li>
+            <li class="sidebar-brand" sec:authorize="hasRole('ADMIN')">
+                <a th:href="@{/admin/categories/}" class="smoothScroll">Edit Categories</a>
+            </li>
+            <li class="sidebar-brand" sec:authorize="hasRole('ADMIN')">
+                <a th:href="@{/admin/users/}" class="smoothScroll">Edit Users</a>
+            </li>
+
+        </ul>
+    </div>
+</header>
