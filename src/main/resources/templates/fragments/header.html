@@ -7,7 +7,15 @@
             <h1 class="text-center">Navigation</h1>
 
             <li class="sidebar-brand">
-                <a th:href="@{/}">Home</a>
+                <a href="#home">Home</a>
+            </li>
+
+            <li class="sidebar-brand">
+                <a href="#solarSystem" >Solar System</a>
+            </li>
+
+            <li class="sidebar-brand">
+                <a href="#funFact" title="funFact">Fun Facts</a>
             </li>
 
             <li class="sidebar-brand" sec:authorize="isAnonymous()">
@@ -27,17 +35,7 @@
             </li>
 
             <li class="sidebar-brand">
-                <a href="#slide2" title="Next Section">Solar</a>
-            </li>
-            <li class="sidebar-brand">
-                <a th:href="@{/planets}">Solar System</a>
-            </li>
-
-            <li class="sidebar-brand">
                 <a th:href="@{/category}">Articles</a>
-            </li>
-            <li class="sidebar-brand">
-                <a th:href="@{/funfact}">Fun Facts</a>
             </li>
             <li class="sidebar-brand" sec:authorize="hasRole('ADMIN')">
                 <a th:href="@{/admin/categories/}" class="smoothScroll">Edit Categories</a>

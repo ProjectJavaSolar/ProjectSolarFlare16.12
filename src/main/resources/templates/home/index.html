@@ -8,7 +8,7 @@
 
 
 
-	text {
+        text {
             filter: url(#filter);
             fill: white;
             font-family: Copperplate Gothic Light, sans-serif;
@@ -21,7 +21,7 @@
     <defs>
 
         <filter id="filter">
-            
+
             <feFlood flood-color="black" result="flood1" />
             <feFlood flood-color="orange" result="flood2" />
             <feOffset in="SourceGraphic" dx="3" dy="0" result="off1a"/>
@@ -41,7 +41,7 @@
                         id = "y"
                         dur ="4s"
 
-                        values = '104px; 104px; 30px; 105px; 30px; 2px; 2px; 50px; 40px; 105px; 105px; 20px; 6ßpx; 40px; 104px; 40px; 70px; 10px; 30px; 104px; 102px'
+                        values = '104px; 104px; 30px; 105px; 30px; 2px; 2px; 50px; 40px; 105px; 105px; 20px; 6?px; 40px; 104px; 40px; 70px; 10px; 30px; 104px; 102px'
 
                         keyTimes = '0; 0.362; 0.368; 0.421; 0.440; 0.477; 0.518; 0.564; 0.593; 0.613; 0.644; 0.693; 0.721; 0.736; 0.772; 0.818; 0.844; 0.894; 0.925; 0.939; 1'
 
@@ -94,10 +94,10 @@
         </filter>
 
     </defs>
-
     <g>
-        <text x="0" y="100">Solar Flare</text>
+        <text x="0" y="100" id="home">Solar Flare</text>
     </g>
+
     <style>
         img:hover {
             box-shadow: 0px 0px 30px #000000;
@@ -143,11 +143,44 @@
             width: 10%;
         }
     </style>
+
+</svg>
+
+<html>
+<head>
+    <style>
+        .parallax {
+            /* The image used */
+            /*background-image: url("static/img/all.jpg");*/
+
+            /* Set a specific height */
+            min-height: 500px;
+
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+    </style>
+</head>
+<body>
+
+<p></p>
+
+<div class="parallax"></div>
+
+<div style="height:1000px;background-color:transparent;font-size:36px">
+    <div id="solarSystem"><h3>Solar system</h3></div>
+
     <div class="moveimage">
         <div class="imgcont">
+
             <a th:href="@{/mercury}">
                 <img class="responsive-image" src="/img/1mercury.png" />
             </a>
+
             <a th:href="@{/venus}">
                 <img class="responsive-image" src="/img/2venus.png"   />
             </a>
@@ -174,4 +207,31 @@
             </a>
         </div>
     </div>
-</svg>
+</div>
+
+<div id="funFact">FunFacts</div>
+<p>
+    at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+    at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+    at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+    at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+    at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+    at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+    at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+    at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+    at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+    at org.thymeleaf.dom.Document.process(Document.java:93) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+    at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1155) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+    at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+    at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+    at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+    at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+    at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1257) ~[spring-webmvc-4.3.4.RELEASE.jar:4.3.4.RELEASE]
+    at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1037) ~[spring-webmvc-4.3.4.RELEASE.jar:4.3.4.RELEASE]
+    at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980) ~[spring-webmvc-4.3.4.RELEASE.jar:4.3.4.RELEASE]
+    at org.sp
+</p>
+</body>
+</html>
+
+
