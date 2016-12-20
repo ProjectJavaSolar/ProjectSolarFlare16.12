@@ -7489,6 +7489,10 @@ html { height: 100%;}
 
 }
 
+.xs {
+    width: 10%;
+}
+
 .smm {
     width: 40%;
 }

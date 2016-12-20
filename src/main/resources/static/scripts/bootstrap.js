@@ -2094,3 +2094,6 @@ if (!window['jQuery']) alert('The jQuery library must be included before the smo
 
 // Initialize all .smoothScroll links
 jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
+
+
+
