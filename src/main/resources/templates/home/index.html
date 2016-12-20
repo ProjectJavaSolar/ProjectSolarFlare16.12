@@ -178,6 +178,7 @@
             height: auto;
             width: 9%;
         }
+
     </style>
 
     <!--smooth scroll begin-->
@@ -276,7 +277,31 @@
     </div>
 </div>
 <!---->
+<style>
+    #sunmoon {
+        margin-top: 164px;
+        margin-bottom: 70.5px;
+    }
+</style>
+    <div style="height:1000px;background-color:transparent;font-size:36px">
+        <div id="sunmoon" class="smoothScroll"><h3 class="sunmoon">Sun and Moon</h3></div>
 
+    <div class="moveimage">
+        <div class="imgcont">
+
+            <a th:href="@{/sun}">
+                <img class="responsive-image" src="/img/sunHome.png"/>
+            </a>
+
+            <a th:href="@{/moon}">
+                <img class="responsive-image" src="/img/moonHome.png"/>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+<!---->
 <div class="main">
     <section></section>
 </div>
