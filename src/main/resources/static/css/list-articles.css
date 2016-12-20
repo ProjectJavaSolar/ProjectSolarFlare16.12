@@ -1128,7 +1128,7 @@ html {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-    font-family: Chalkduster, fantasy;
+    font-family: monospace;
     font-size: 17px;
     line-height: 2.0;
     color: #ffffff;
@@ -1312,7 +1312,7 @@ h6 .small,
 h1,
 .h1 {
     font-size: 57px;
-    font-family: serif;
+    font-family: monospace;
     margin-top:25px;
     margin-bottom: 60px;
     color: #ffffff;
@@ -1320,6 +1320,7 @@ h1,
 }
 h2,
 .h2 {
+    font-family: monospace;
     font-size: 32px;
 }
 h3,
@@ -7072,6 +7073,7 @@ article .author {
     margin-bottom: 0;
 }
 article .author  {
+    font-family: monospace;
     display: block;
     font-size: 100%;
     line-height: 1.42857143;
@@ -7479,6 +7481,7 @@ html { height: 100%;}
 }
 
 .btnn {
+    font-family: monospace;
     display: inline-block;
     border-radius: 2px;
     border: none;
@@ -7497,6 +7500,7 @@ html { height: 100%;}
     width: 40%;
 }
 .ghost {
+    font-family:monospace;
     background-color: rgb(0, 0, 0);
     color: #5a5a8a;
     border: 1px solid #fff;

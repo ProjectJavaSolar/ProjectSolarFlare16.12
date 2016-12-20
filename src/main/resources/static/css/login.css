@@ -1183,7 +1183,7 @@ input,
 button,
 select,
 textarea {
-    font-family: inherit;
+    font-family: monospace;
     font-size: inherit;
     line-height: inherit;
 }
@@ -2596,7 +2596,7 @@ legend {
     color: #ffffff;
     border: 0;
     border-bottom: 1px solid transparent;
-    font-family: sans-serif;
+    font-family: monospace;
 }
 label {
     display: inline-block;
@@ -6958,6 +6958,7 @@ table-bordered > tfoot > tr > td,
 }
 .form-control,
 input {
+    font-family: monospace;
     border-width: 2px;
     -webkit-box-shadow: none;
     box-shadow: none;

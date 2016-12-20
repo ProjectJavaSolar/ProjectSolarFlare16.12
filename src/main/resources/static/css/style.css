@@ -1297,6 +1297,7 @@ h1,
 }
 h2,
 .h2 {
+    font-family: monospace;
     font-size: 82px;
     text-align: center;
     position: relative;
@@ -1311,6 +1312,7 @@ h3,
 }
 h4,
 .h4 {
+    font-family: monospace;
     font-size: 70px;
     position: relative;
     color: rgba(80, 14, 14, 0.72);
@@ -2328,6 +2330,7 @@ th {
     font-size: 55px;
     text-align: center;
     position: relative;
+    font-family: monospace;
 }
 .table > tbody + tbody {
     border-top: 2px solid #ecf0f1;
@@ -3042,6 +3045,7 @@ select[multiple].input-lg {
     }
 }
 .btn {
+    font-family: monospace;
     display: inline-block;
     margin-bottom: 15px;
     margin-top: 15px;
@@ -3338,6 +3342,7 @@ fieldset[disabled] .btn-info.focus {
     border-color: #7f5006;
 }
 .btn-warning:hover {
+    font-family: monospace;
     color: #ffffff;
     background-color: #c87f0a;
     border-color: #be780a;
