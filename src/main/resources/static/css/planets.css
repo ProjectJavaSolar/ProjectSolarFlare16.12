@@ -1341,9 +1341,13 @@ h3,
 }
 h4,
 .h4 {
-    font-size: 39px;
-    text-align: justify;
+    font-size: 30px;
+    color: white;
     font-family: agency fb;
+    position: relative;
+    top: -170px;
+    right: -70px;
+    text-align: left;
 }
 h5,
 .h5 {
