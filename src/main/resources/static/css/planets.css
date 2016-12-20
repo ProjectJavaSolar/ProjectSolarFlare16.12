@@ -1316,7 +1316,7 @@ h1,
 .h1 {
     font-size: 130px;
     position: relative;
-    right: -550px;
+    right: -600px;
     font-family: ar destine;
     color: white;
 }
@@ -1337,7 +1337,7 @@ h3,
     color: white;
     position: relative;
     top: -340px;
-    right: -650px;
+    right: -630px;
 }
 h4,
 .h4 {
@@ -1345,9 +1345,8 @@ h4,
     color: white;
     font-family: agency fb;
     position: relative;
-    top: -170px;
-    right: -70px;
-    text-align: left;
+    right: 0px;
+    text-align: justify;
 }
 h5,
 .h5 {
@@ -1357,6 +1356,7 @@ h5,
     position: relative;
     top: -170px;
     right: -70px;
+    text-align: left;
 }
 
 p {
@@ -7104,6 +7104,7 @@ article .author  {
     content: '\2014 \00A0';
 }
 #sidebar-wrapper {
+    top:0px;
     margin-right: -250px;
     right: 0;
     width: 250px;
@@ -7172,6 +7173,7 @@ article .author  {
 }
 
 #sidebar-wrapper.active {
+    top: 0px;
     right: 250px;
     width: 250px;
     transition: all 0.5s ease-out 0s;
