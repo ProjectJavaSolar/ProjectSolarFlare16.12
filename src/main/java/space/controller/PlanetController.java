@@ -65,4 +65,16 @@ public class PlanetController {
 
         return "base-layout2";
     }
+    @GetMapping("/sun")
+    public String slunceto(Model model){
+        model.addAttribute("view", "planets/sun");
+
+        return "base-layout2";
+    }
+    @GetMapping("/moon")
+    public String moon(Model model){
+        model.addAttribute("view", "planets/moon");
+
+        return "base-layout2";
+    }
 }
