@@ -1,16 +1,14 @@
 <main>
     <div class="container body-content">
         <div class="row">
-            <th:block th:each="funFact : ${funfacts}">
+            <th:block th:each="funfacts : ${funfacts}">
                 <div class="col-md-6">
                     <article>
                         <header>
                             <h2></h2>
                         </header>
 
-                        <p th:text="${funFact.summary}"></p>
-
-
+                        <p th:text="${funfacts.content}"></p>
 
                         <footer>
 

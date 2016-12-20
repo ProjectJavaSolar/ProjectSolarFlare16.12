@@ -12,7 +12,7 @@ public class FunFact {
 
     private String content;
 
-  //  private Set<FunFact> funFacts;
+    //  private Set<Funfact> funFacts;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,6 +43,6 @@ public class FunFact {
     public String getSummary(){
         return this.getContent();
     }
- //  @JoinColumn(table = "funfacts")
- //  public Set<FunFact> getFunFact() { return funFacts; }
+    //  @JoinColumn(table = "funfacts")
+    //  public Set<Funfact> getFunFact() { return funFacts; }
 }

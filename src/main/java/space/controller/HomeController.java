@@ -10,6 +10,7 @@ import space.entity.Article;
 import space.entity.Category;
 import space.entity.FunFact;
 import space.repository.CategoryRepository;
+
 import space.repository.FunFactRepository;
 
 
@@ -34,9 +35,11 @@ public class HomeController {
     public String index(Model model) {
 
         List<Category> categories = this.categoryRepository.findAll();
+        List<FunFact> funFacts = this.funFactRepository.findAll();
 
         model.addAttribute("view", "home/index");
         model.addAttribute("categories", categories);
+        model.addAttribute("funFacts", funFacts);
 
         return "base-layout";
     }
@@ -82,22 +85,17 @@ public class HomeController {
         return "base-layout2";
     }
 
-    @GetMapping("/funfact/list")
+    @GetMapping("/funfact")
     public String factDetails(Model model) {
-//        Integer idMax = "SELECT COUNT (id) FROM funfacts";
 
-//        int min = 1;
-//        int max = GetMaxIdNumber();
+       // Random rand = new Random();
+       // Funfact funfact = this.funfactRepository.findAll();
+       // Set<Funfact> funfacts = funFact.getFunFact();
 
-
-
-        Random rand = new Random();
-
-        List<FunFact> facts = this.funFactRepository.findAll();
-       // FunFact randomFunFact = facts.get(rand.nextInt(facts.size()));
-
-        model.addAttribute("view", "funfact/list");
-        model.addAttribute("funFact", facts);
+       // Funfact randomFunFact = facts.get(rand.nextInt(facts.size()));
+        List<FunFact> funfacts = this.funFactRepository.findAll();
+        model.addAttribute("view", "funfact/details");
+        model.addAttribute("funfacts", funfacts);
 
         return "base-layout";
     }

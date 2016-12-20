@@ -7505,3 +7505,12 @@ html { height: 100%;}
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
+
+.funFacts {
+    display: none;
+}
+
+.randomFunFact {
+    font-family: sans-serif;
+    width: 740px;
+}
