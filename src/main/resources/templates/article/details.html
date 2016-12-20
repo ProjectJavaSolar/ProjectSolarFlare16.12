@@ -12,17 +12,22 @@
         <div class="row">
             <div class="col-md-10">
                 <article>
-                    <header style="height: 0px;
-width: 0px;">
+                    <div class="roww">
+                    <header>
                         <h2 th:text="${article.title}"></h2>
                     </header>
-
+                    </div>
+                    <div>
                     <p th:text="${article.content}"></p>
-
+                    </div>
+                    <div>
                     <small class="author" th:text="${article.author.fullName}"></small>
+                    </div>
+                    <div>
                     <p>
                         <a class="btnn smm ghost" th:each="tag:${article.tags}" th:href="@{/tag/{name}(name=${tag.name})}" th:text="${tag.name}"></a>
                     </p>
+                    </div>
 
 
                     <footer>
