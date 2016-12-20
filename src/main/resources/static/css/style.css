@@ -1109,8 +1109,8 @@ html {
 
 }
 body {
-    font-family: Chalkduster, fantasy;
-    font-size: 25px;
+    font-family: monospace;
+    font-size: 20px;
     line-height: 1.42857143;
     color: #ffffff;
     background-color: #ffffff;

@@ -135,10 +135,10 @@
     <div class="container" style="height: auto">
             <div  th:each="category : ${categories}">
                 <header>
-                    <h2>
+                    <my-body>
                         <a th:href="@{/category/{id}(id=${category.id})}" th:text="${category.name + ' (' + #sets.size(category.articles) + ')'}">
                         </a>
-                    </h2>
+                    </my-body>
                 </header>
             </div>
     </div>
