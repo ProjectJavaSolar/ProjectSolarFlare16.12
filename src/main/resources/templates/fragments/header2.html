@@ -22,19 +22,11 @@
                 <a th:href="@{/logout}" class="smoothScroll">Logout</a>
             </li>
 
-            <li class="sidebar-brand" sec:authorize="isAuthenticated()">
-                <a th:href="@{/profile}" class="smoothScroll">My Profile</a>
-            </li>
-
-            <li class="sidebar-brand">
-                <a th:href="@{/planets}">Solar System</a>
-            </li>
-
             <li class="sidebar-brand">
                 <a th:href="@{/category}">Articles</a>
             </li>
             <li class="sidebar-brand">
-                <a th:href="@{/funfact}">Fun Facts</a>
+                <a th:href="@{/funfact/create}">Add a Fact</a>
             </li>
             <li class="sidebar-brand" sec:authorize="hasRole('ADMIN')">
                 <a th:href="@{/admin/categories/}" class="smoothScroll">Edit Categories</a>

@@ -25,7 +25,7 @@ public class FunFactController {
 
         model.addAttribute("view", "funfact/create");
 
-        return "base-layout";
+        return "base-layout2";
     }
     @NotNull
     @PostMapping("/funfact/create")

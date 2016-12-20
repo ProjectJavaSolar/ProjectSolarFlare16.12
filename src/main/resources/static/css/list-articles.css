@@ -7503,6 +7503,7 @@ html { height: 100%;}
     transition: .2s ease;
     width: 164.8px;
     height: 34.8px;
+    text-align: center;
 }
 .ghost:hover {
     background-color: #ffffff;
