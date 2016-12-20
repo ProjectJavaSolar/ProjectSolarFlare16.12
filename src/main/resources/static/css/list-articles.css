@@ -7515,4 +7515,15 @@ html { height: 100%;}
     transition: .2s ease;
 }
 
+.mine {
+    font-family: monospace;
+    font-size: 82px;
+    text-align: center;
+    position: relative;
+    top: -14px;
+    color: rgba(80, 14, 14, 0.72);
+}
+
+
+
 
