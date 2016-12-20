@@ -1,7 +1,8 @@
 <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
      width="600px" height="100px" viewBox="0 0 600 100" style="margin-right: 100px;
         margin-left: 105px;
-        width: 1200px;">
+        width: 1200px;
+        height: 0px;">
     <style type="text/css">
 
 
@@ -99,11 +100,38 @@
 
     <div class="header">
         <g>
-            <text x="0" y="100" id="home" class="smoothScroll">Solar Flare</text>
+            <text x="0" y="100" id="home" class="smoothScroll" style="padding-top: 100px;">Solar Flare</text>
         </g>
     </div>
 
     <style>
+        btnn {
+            display: inline-block;
+            border-radius: 2px;
+            border: none;
+            height: 45px;
+            padding: 0;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        mdd {
+            width: 30%;
+        }
+        ghost {
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            transition: .2s ease;
+            margin-bottom: 3%;
+            margin-left: 2%;
+        }
+        ghost:hover {
+            background-color: rgba(0, 0, 0, 0.33);
+
+            color: white;
+            transition: .2s ease;
+        }
+
         img:hover {
             box-shadow: 0px 0px 30px #000000;
             z-index: 2;
@@ -217,32 +245,32 @@
         <div class="imgcont">
 
             <a th:href="@{/mercury}">
-                <img class="responsive-image" src="/img/1mercury.png"/>
+                <img class="responsive-image" src="/img/1mercury.png" style="top: 120px;"/>
             </a>
 
             <a th:href="@{/venus}">
-                <img class="responsive-image" src="/img/2venus.png"/>
+                <img class="responsive-image" src="/img/2venus.png" style="top: 120px;"/>
             </a>
             <a th:href="@{/earth}">
-                <img class="responsive-image" src="/img/3earth.png"/>
+                <img class="responsive-image" src="/img/3earth.png" style="top: 120px;"/>
             </a>
             <a th:href="@{/mars}">
-                <img class="responsive-image" src="/img/4mars.png"/>
+                <img class="responsive-image" src="/img/4mars.png" style="top: 120px;"/>
             </a>
             <a th:href="@{/jupiter}">
-                <img class="responsive-image" src="/img/5jupiter.png"/>
+                <img class="responsive-image" src="/img/5jupiter.png" style="top: 120px;"/>
             </a>
             <a th:href="@{/saturn}">
-                <img class="responsive-image" src="/img/6saturn.png"/>
+                <img class="responsive-image" src="/img/6saturn.png" style="top: 120px;"/>
             </a>
             <a th:href="@{/uranus}">
-                <img class="responsive-image" src="/img/7uranus.png"/>
+                <img class="responsive-image" src="/img/7uranus.png" style="top: 120px;"/>
             </a>
             <a th:href="@{/neptune}">
-                <img class="responsive-image" src="/img/8neptune.png"/>
+                <img class="responsive-image" src="/img/8neptune.png" style="top: 120px;"/>
             </a>
             <a th:href="@{/pluto}">
-                <img class="responsive-image" src="/img/9pluto.png"/>
+                <img class="responsive-image" src="/img/9pluto.png" style="top: 120px;"/>
             </a>
         </div>
     </div>
@@ -255,18 +283,23 @@
 
 <div class="main" id="section2">
     <section style="background-color:blue"></section>
+    <div id="funFact" class="smoothScroll">Did You Know?</div>
+
 </div>
 <!---->
-<div id="funFact" class="smoothScroll">Did You Know?</div>
-<div class="btn btn-primary randomFactButton">Random Fact</div>
+
+<div class="container">
 <ul th:each="funFact : ${funFacts}" class="funFacts">
     <li th:text="${funFact.content}"></li>
 </ul>
-
-<div class="randomFact"></div>
+</div>
+<div class="btn btn-primary randomFactButton">Random Fact</div>
+<div class="randomFact" style="margin-bottom: 300px;width: 1600px;padding-left: 430px;margin-left: 0px;background-color: background: background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0.02) 14%, rgba(0,0,0,1) 39%, rgba(0,0,0,1) 40%, rgba(0,0,0,1) 41%, rgba(0,0,0,1) 44%, rgba(0,0,0,1) 48%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 54%, rgba(0,0,0,1) 58%, rgba(0,0,0,1) 60%, rgba(0,0,0,0.89) 63%, rgba(0,0,0,0) 87%, rgba(0,0,0,0.02) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0.02) 14%,rgba(0,0,0,1) 39%,rgba(0,0,0,1) 40%,rgba(0,0,0,1) 41%,rgba(0,0,0,1) 44%,rgba(0,0,0,1) 48%,rgba(0,0,0,1) 50%,rgba(0,0,0,1) 54%,rgba(0,0,0,1) 58%,rgba(0,0,0,1) 60%,rgba(0,0,0,0.89) 63%,rgba(0,0,0,0) 87%,rgba(0,0,0,0.02) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,0.02) 14%,rgba(0,0,0,1) 39%,rgba(0,0,0,1) 40%,rgba(0,0,0,1) 41%,rgba(0,0,0,1) 44%,rgba(0,0,0,1) 48%,rgba(0,0,0,1) 50%,rgba(0,0,0,1) 54%,rgba(0,0,0,1) 58%,rgba(0,0,0,1) 60%,rgba(0,0,0,0.89) 63%,rgba(0,0,0,0) 87%,rgba(0,0,0,0.02) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#05000000',GradientType=1 ); /* IE6-9 */;padding-right: 500px;border-left-width: 10px;border-right-width: 10px;margin-right: 0px;padding-bottom: 0px; padding-top: 50px; padding-bottom: 50px"></div>
 
 </body>
-
 </html>
 
 <script th:src="@{/scripts/randomFactGenerator.js}"></script>
