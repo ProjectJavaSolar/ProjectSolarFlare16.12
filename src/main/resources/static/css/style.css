@@ -1110,7 +1110,7 @@ html {
 }
 body {
     font-family: Chalkduster, fantasy;
-    font-size: 17px;
+    font-size: 25px;
     line-height: 1.42857143;
     color: #ffffff;
     background-color: #ffffff;
@@ -1297,7 +1297,11 @@ h1,
 }
 h2,
 .h2 {
-    font-size: 32px;
+    font-size: 82px;
+    text-align: center;
+    position: relative;
+    top: -100px;
+    color: rgba(80, 14, 14, 0.72);
 }
 h3,
 .h3 {
@@ -1307,7 +1311,10 @@ h3,
 }
 h4,
 .h4 {
-    font-size: 19px;
+    font-size: 70px;
+    position: relative;
+    color: rgba(80, 14, 14, 0.72);
+    text-align: center;
 }
 h5,
 .h5 {
@@ -2300,10 +2307,10 @@ th {
 .table > thead > tr > td,
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
-    padding: 8px;
+    padding: 20px;
     line-height: 1.42857143;
     vertical-align: top;
-    border-top: 1px solid #ecf0f1;
+    background-color: rgba(222, 69, 0, 0.57);
 }
 .table > thead > tr > th {
     vertical-align: bottom;
@@ -2316,6 +2323,11 @@ th {
 .table > colgroup + thead > tr:first-child > td,
 .table > thead:first-child > tr:first-child > td {
     border-top: 0;
+    position: relative;
+    background-color: transparent;
+    font-size: 55px;
+    text-align: center;
+    position: relative;
 }
 .table > tbody + tbody {
     border-top: 2px solid #ecf0f1;
@@ -2417,7 +2429,7 @@ table th[class*="col-"] {
 .table > thead > tr.info > th,
 .table > tbody > tr.info > th,
 .table > tfoot > tr.info > th {
-    background-color: #3498db;
+    background-color: rgba(125, 41, 41, 0.38);
 }
 .table-hover > tbody > tr > td.info:hover,
 .table-hover > tbody > tr > th.info:hover,
