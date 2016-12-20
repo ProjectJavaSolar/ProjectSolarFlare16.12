@@ -1,10 +1,9 @@
 <head th:fragment="head">
 
     <link th:href="@{/css/list-articles.css}" rel="stylesheet" type="text/css"/>
+    <link rel="shortcut icon" href="img/logo.jpg"  />
 
 </head>
-<main>
-
 
 <main>
     <div class="container body-content">
@@ -21,9 +20,6 @@
 
                         <small class="author" th:text="${article.author.fullName}"></small>
 
-
-
-
                         <footer>
                             <div class="roww">
                                 <a class="btnn smm ghost"
@@ -36,5 +32,4 @@
             </th:block>
         </div>
     </div>
-</main>
 </main>

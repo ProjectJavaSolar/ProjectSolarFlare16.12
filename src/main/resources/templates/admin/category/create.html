@@ -1,6 +1,9 @@
 <head th:fragment="head">
-    <link th:href="@{/css/login.css}" rel="stylesheet" type="text/css"/>
+
+    <link th:href="@{/css/edit-delete.css}" rel="stylesheet" type="text/css"/>
+    <link rel="shortcut icon" href="img/logo.jpg"  />
 </head>
+
 <main>
     <div class="container body-content span=8 offset=4">
         <div class="well">
@@ -9,15 +12,16 @@
                     <legend>New Category</legend>
 
                     <div class="form-group">
+                        <label class="col-sm-4 control-label" for="category_name">Category Name</label>
                         <div class="col-sm-4 ">
                             <input type="text" class="form-control" id="category_name" placeholder="Category Name" name="name"/>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <div class="roww">
-                            <a class="btnn mdd ghost" th:href="@{/admin/categories/}">Cancel</a>
-                            <input type="submit" class="btnn mdd ghost" th:value="Create"/>
+                        <div class="col-sm-4 col-sm-offset-4">
+                            <a class="btn btn-default" th:href="@{/admin/categories/}">Cancel</a>
+                            <input type="submit" class="btn btn-success" th:value="Create"/>
                         </div>
                     </div>
                 </fieldset>
