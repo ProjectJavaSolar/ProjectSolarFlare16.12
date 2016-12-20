@@ -3043,7 +3043,8 @@ select[multiple].input-lg {
 }
 .btn {
     display: inline-block;
-    margin-bottom: 0;
+    margin-bottom: 15px;
+    margin-top: 15px;
     font-weight: normal;
     text-align: center;
     vertical-align: middle;
@@ -3053,10 +3054,10 @@ select[multiple].input-lg {
     background-image: none;
     border: 1px solid transparent;
     white-space: nowrap;
-    padding: 10px 15px;
-    font-size: 15px;
-    line-height: 1.42857143;
-    border-radius: 4px;
+    padding: 11px 47px;
+    font-size: 20px;
+    line-height: 1.428571;
+    border-radius: 0px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -3162,8 +3163,8 @@ fieldset[disabled] .btn-default.focus {
 .btn-primary:focus,
 .btn-primary.focus {
     color: #ffffff;
-    background-color: #1a242f;
-    border-color: #000000;
+    background-color: rgba(179, 80, 2, 0.77);
+    border-color: #fff;
 }
 .btn-primary:hover {
     color: #ffffff;
