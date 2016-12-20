@@ -1251,8 +1251,7 @@ h2,
 .h2,
 h3,
 .h3 {
-    margin-top: 164px;
-    margin-bottom: -77.5px;
+
 }
 h1 small,
 .h1 small,
@@ -1300,7 +1299,7 @@ h2,
     font-family: monospace;
     font-size: 82px;
     text-align: center;
-    position: relative;
+    /*position: relative;*/
     top: -100px;
     color: rgba(80, 14, 14, 0.72);
 }
